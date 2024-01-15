@@ -1,7 +1,3 @@
-'''def main():
-# your tests and your error handling
-
-  '''
 import sys
 
 def species_counter(arg : str):
