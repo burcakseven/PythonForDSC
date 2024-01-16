@@ -1,5 +1,3 @@
-print(filter.__doc__)
-
 def ft_filter(func, iterable):
     '''
     filter(function or None, iterable) --> filter object
