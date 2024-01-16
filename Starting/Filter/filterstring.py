@@ -1,16 +1,21 @@
 from ft_filter import ft_filter
 import sys
 
-def filter_string(arg):
-    pass
+def filter_string(splitted, min_limit : int):
+    f = lambda x: x if(x>min_limit) else None
+    lenghts_of_elements = [words for words in splitted if f(len(words)) != None]
+    return lenghts_of_elements
     
 def main():
     
-    arg = sys.argv()
+    arg = sys.argv
     try:
         if len(arg) == 3:
-            if arg[1].isprintable() and arg[1].isdecimal():
-                filter_string(arg)
+            splitted = arg[1].split(' ')
+            if not sum([not word.isalpha() for word in splitted]) and arg[2].isdecimal():
+                print(filter_string(splitted, int(arg[2])))
+            else:
+                raise AssertionError("AssertionError: the arguments are bad, number")
         else:
             raise AssertionError("AssertionError: the arguments are bad")
     except AssertionError as a:
