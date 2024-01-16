@@ -8,14 +8,14 @@ def filter_string(splitted, min_limit : int):
     
 def main():
     
-    arg = sys.argv
+    arg = sys.argv                                           
     try:
         if len(arg) == 3:
             splitted = arg[1].split(' ')
-            if not sum([not word.isalpha() for word in splitted]) and arg[2].isdecimal():
+            if not sum([not word.isalnum() for word in splitted]) and arg[2].isdecimal():
                 print(filter_string(splitted, int(arg[2])))
             else:
-                raise AssertionError("AssertionError: the arguments are bad, number")
+                raise AssertionError("AssertionError: the arguments are bad")
         else:
             raise AssertionError("AssertionError: the arguments are bad")
     except AssertionError as a:
