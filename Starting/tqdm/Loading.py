@@ -3,7 +3,7 @@ from time import sleep
 def loading(now, space, percent):
     str = f"{percent}%|"
     str += chr(0x2588) * int((now/7*7))
-    str += chr(int(0x258F) - (now % 7)) if (now % 7) == 0 else ''
+    str += chr(int(0x258F) - (now % 7))  if (now % 7) == 0 else ''
     str += (' ' * space)
     return str
     
